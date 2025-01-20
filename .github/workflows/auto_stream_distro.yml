@@ -23,8 +23,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y software-properties-common
-        # sudo add-apt-repository ppa:osbuild/osbuild
-        sudo apt-get update
         sudo apt-get install -y python3-pip osbuild qemu-utils jq
         sudo apt-get install podman
 
