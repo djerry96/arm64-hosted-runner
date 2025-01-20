@@ -11,9 +11,9 @@ on:
 jobs:
   build-autosd-image:
     name: Build Auto Stream Distribution Base Image
-    runs-on: ubuntu-latest  # Use GitHub-hosted runner
-    container:
-      image: ubuntu-22.04-arm  # Use an arm64 container
+    runs-on: ubuntu-22.04-arm # ubuntu-latest  Use GitHub-hosted runner
+    # container:
+      # image: ubuntu-22.04-arm  # Use an arm64 container
 
     steps:
     - name: Checkout code
