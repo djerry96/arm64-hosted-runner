@@ -25,57 +25,18 @@ jobs:
         sudo apt-get install -y software-properties-common
         # sudo add-apt-repository ppa:osbuild/osbuild
         sudo apt-get update
-        sudo apt-get install -y python3-pip osbuild osbuild-composer qemu-utils jq
+        sudo apt-get install -y python3-pip osbuild qemu-utils jq
+        sudo apt-get install podman
 
     - name: Clone CentOS AutoSD Repository
       run: |
-        git clone https://git.centos.org/rpms/automotive-image-builder.git
-        cd automotive-image-builder
-        git checkout main  # Or a specific branch/tag if needed
+        git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
+        cd sample-images
 
     - name: Configure OSBuild for AutoSD
       run: |
-        cd automotive-image-builder
-        mkdir -p osbuild-configs
-        cat <<EOF > osbuild-configs/autosd-base-image.json
-        {
-          "version": "1",
-          "pipelines": [
-            {
-              "name": "build",
-              "build": "name:org.osbuild.fedora34",
-              "stages": [
-                {
-                  "type": "org.osbuild.rpm",
-                  "inputs": [
-                    {
-                      "type": "org.osbuild.files",
-                      "origin": "org.osbuild.source",
-                      "references": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "name": "assembler",
-              "stages": [
-                {
-                  "type": "org.osbuild.qemu",
-                  "options": {
-                    "format": "qcow2"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-        EOF
-
-    - name: Build Image with OSBuild
-      run: |
-        cd automotive-image-builder/osbuild-configs
-        sudo osbuild autosd-base-image.json --output-directory ../output
+        # cd automotive-image-builder
+        sudo ./auto-image-builder.sh build --target qemu --export qcow2 images/minimal.mpp.yml hosted_build_github_qemu.qcow2
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
