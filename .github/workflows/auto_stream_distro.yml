@@ -36,4 +36,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: autosd-base-image
-        path: automotive-image-builder/output/*.qcow2
+        path: sample-images/*.qcow2
