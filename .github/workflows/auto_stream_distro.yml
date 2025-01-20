@@ -73,7 +73,7 @@ jobs:
     - name: Build Image with OSBuild
       run: |
         cd automotive-image-builder/osbuild-configs
-        osbuild autosd-base-image.json --output-directory ../output
+        sudo osbuild autosd-base-image.json --output-directory ../output
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
