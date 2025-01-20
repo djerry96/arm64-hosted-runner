@@ -13,7 +13,7 @@ jobs:
     name: Build Auto Stream Distribution Base Image
     runs-on: ubuntu-latest  # Use GitHub-hosted runner
     container:
-      image: arm64v8/ubuntu:20.04  # Use an arm64 container
+      image: ubuntu-22.04-arm  # Use an arm64 container
 
     steps:
     - name: Checkout code
