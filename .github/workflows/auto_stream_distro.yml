@@ -23,7 +23,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y software-properties-common
-        sudo apt-get install -y python3-pip osbuild qemu-utils jq
+        sudo apt-get install -y python3-pip qemu-utils jq
         sudo apt-get install podman
 
     - name: Clone CentOS AutoSD Repository
