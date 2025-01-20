@@ -21,8 +21,8 @@ jobs:
 
     - name: Install prerequisites
       run: |
-        apt-get update
-        apt-get install -y python3-pip osbuild osbuild-composer \
+        sudo apt-get update
+        sudo apt-get install -y python3-pip osbuild osbuild-composer \
                            qemu-utils jq
 
     - name: Clone CentOS AutoSD Repository
