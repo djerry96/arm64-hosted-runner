@@ -30,9 +30,6 @@ jobs:
       run: |
         git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
         cd sample-images
-
-    - name: Configure OSBuild for AutoSD
-      run: |
         sudo ./auto-image-builder.sh build --target qemu --export qcow2 images/minimal.mpp.yml hosted_build_github_qemu.qcow2
 
     - name: Upload Artifact
