@@ -33,7 +33,6 @@ jobs:
 
     - name: Configure OSBuild for AutoSD
       run: |
-        # cd automotive-image-builder
         sudo ./auto-image-builder.sh build --target qemu --export qcow2 images/minimal.mpp.yml hosted_build_github_qemu.qcow2
 
     - name: Upload Artifact
