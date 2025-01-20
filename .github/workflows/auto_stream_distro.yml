@@ -19,11 +19,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Install prerequisites
+    - name: Install OSBuild and prerequisites
       run: |
         sudo apt-get update
-        sudo apt-get install -y python3-pip osbuild osbuild-composer \
-                           qemu-utils jq
+        sudo apt-get install -y software-properties-common
+        sudo add-apt-repository ppa:osbuild/osbuild
+        sudo apt-get update
+        sudo apt-get install -y python3-pip osbuild osbuild-composer qemu-utils jq
+
 
     - name: Clone CentOS AutoSD Repository
       run: |
