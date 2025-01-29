@@ -30,7 +30,8 @@ jobs:
       run: |
         git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
         cd sample-images
-        sudo ./auto-image-builder.sh build --target qemu --export qcow2 images/minimal.mpp.yml hosted_build_github_qemu.qcow2
+        wget https://github.com/djerry96/arm64-hosted-runner/blob/Avassa-ARM-QEMU/avassa.aib.yml
+        sudo ./auto-image-builder.sh build --target qemu --export qcow2 avassa.aib.yml hosted_build_github_qemu_avassa.qcow2
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
