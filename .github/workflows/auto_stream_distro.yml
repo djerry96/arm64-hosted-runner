@@ -38,3 +38,4 @@ jobs:
       with:
         name: autosd-base-image
         path: sample-images/*.qcow2
+        
