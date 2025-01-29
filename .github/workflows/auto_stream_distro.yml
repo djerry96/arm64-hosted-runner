@@ -25,16 +25,14 @@ jobs:
         sudo apt-get install -y software-properties-common
         sudo apt-get install -y python3-pip qemu-utils jq
         sudo apt-get install podman
-
     - name: Clone CentOS AutoSD Repository
       run: |
         git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
         cd sample-images
-        sudo ./auto-image-builder.sh build --target qemu --export qcow2 images/aarch64.mpp.yml hosted_build_github_aarch64.qcow2
-
+        sudo ./auto-image-builder.sh build --target qemu --export qcow2 images/minimal.mpp.yml hosted_build_github_qemu.qcow2
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: autosd-base-image
+        path: automotive-image-builder/output/*.qcow2
         path: sample-images/*.qcow2
-        
