@@ -30,7 +30,7 @@ jobs:
       run: |
         git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
         cd sample-images
-        sudo ./auto-image-builder.sh build --target qemu --export qcow2 aarch64.mpp.yml hosted_build_github_aarch64.qcow2
+        sudo ./auto-image-builder.sh build --target qemu --export qcow2 images/aarch64.mpp.yml hosted_build_github_aarch64.qcow2
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
