@@ -1,7 +1,9 @@
 # arm64-hosted-runner
 Repository to test the recent Linux arm64 hosted runner service
 
+The repository to pull the manifests is located in: https://github.com/djerry96/AutoSD-ImageBuider-Manifests
 
+Command to run in QEMU the ARM image for the Automotive Kernel from the SIG AutoSD.
   
 qemu-system-aarch64 \
   -machine virt \
