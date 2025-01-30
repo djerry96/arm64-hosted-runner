@@ -34,7 +34,7 @@ jobs:
         sudo ./auto-image-builder.sh build --target qemu --export qcow2 AutoSD-ImageBuider-Manifests/avassa_minimal.mpp.yml hosted_build_github_qemu_avassa.qcow2
         
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: autosd-base-image
         path: sample-images/*.qcow2
