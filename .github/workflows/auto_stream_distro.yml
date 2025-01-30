@@ -30,7 +30,7 @@ jobs:
       run: |
         git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
         cd sample-images
-        git clone https://github.com/djerry96/Embedded_Systems_Engineer.git
+        git clone https://github.com/djerry96/AutoSD-ImageBuider-Manifests.git
         sudo ./auto-image-builder.sh build --target qemu --export qcow2 Embedded_Systems_Engineer/avassa_minimal.mpp.yml hosted_build_github_qemu_avassa.qcow2
         
     - name: Upload Artifact
