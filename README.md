@@ -1,7 +1,14 @@
 # arm64-hosted-runner
-Repository to test the recent Linux arm64 hosted runner service
+Repository to run the recent Linux arm64 hosted runner service.
+
+The workflow is defined in the file: https://github.com/djerry96/arm64-hosted-runner/blob/main/.github/workflows/auto_stream_distro.yml
 
 The repository to pull the manifests is located in: https://github.com/djerry96/AutoSD-ImageBuider-Manifests
+
+
+
+
+
 
 Command to run in QEMU the ARM image for the Automotive Kernel from the SIG AutoSD.
   
