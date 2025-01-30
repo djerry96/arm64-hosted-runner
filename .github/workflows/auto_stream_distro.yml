@@ -33,7 +33,7 @@ jobs:
         cd images
         wget https://github.com/djerry96/Embedded_Systems_Engineer/blob/main/avassa_minimal.mpp.yml
         cd ..
-        sudo ./auto-image-builder.sh build --target qemu --export qcow2 images/avassa_minimal.mpp.yml hosted_build_github_qemu_avassa.qcow2
+        sudo ./auto-image-builder.sh build --target qemu --export qcow2 images/minimal.mpp.yml hosted_build_github_qemu_avassa.qcow2
         
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
