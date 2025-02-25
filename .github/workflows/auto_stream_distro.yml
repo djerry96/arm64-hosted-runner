@@ -31,7 +31,7 @@ jobs:
         git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
         cd sample-images
         curl -O "https://gitlab.com/CentOS/automotive/sample-images/-/raw/main/auto-image-builder.sh?ref_type=heads"
-        bash auto-image-builder.sh build --distro autosd9 --mode image --target qemu --export qcow2 minimal.aib.yml minimal.qcow2
+        sudo auto-image-builder.sh build --distro autosd9 --mode image --target qemu --export qcow2 minimal.aib.yml minimal.qcow2
 
 
     - name: Upload Artifact
