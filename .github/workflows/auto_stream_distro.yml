@@ -30,11 +30,10 @@ jobs:
       run: |
         git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
         cd sample-images
-        sudo dnf copr enable @centos-automotive-sig/automotive-image-builder
-        sudo dnf copr enable @centos-automotive-sig/osbuild-auto
-        sudo dnf install automotive-image-builder
-        sudo automotive-image-builder build --distro autosd9 --mode image --target s32g_vnp_rdb3 --export image images/simple-developer.aib.yml dev-test-1.raw
-        
+        curl -O "https://gitlab.com/CentOS/automotive/sample-images/-/raw/main/auto-image-builder.sh?ref_type=heads"
+        bash auto-image-builder.sh build --distro autosd9 --mode image --target qemu --export qcow2 minimal.aib.yml minimal.qcow2
+
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
