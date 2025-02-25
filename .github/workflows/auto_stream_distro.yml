@@ -31,11 +31,11 @@ jobs:
         git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
         curl -O "https://gitlab.com/CentOS/automotive/sample-images/-/raw/main/auto-image-builder.sh?ref_type=heads"
         cd sample-images
-        sudo bash auto-image-builder.sh build --distro autosd9 --mode image --target qemu --export qcow2 images/simple-developer.aib.yml hosted-test-minimal-image.qcow2
+        sudo bash auto-image-builder.sh build --distro autosd9 --mode image --target qemu --export image images/simple-developer.aib.yml hosted-test-minimal-image.img
 
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: autosd-base-image
-        path: sample-images/*.qcow2
+        path: sample-images/*.img
