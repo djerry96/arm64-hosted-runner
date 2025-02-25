@@ -31,7 +31,7 @@ jobs:
         git clone --recursive https://gitlab.com/CentOS/automotive/sample-images.git
         curl -O "https://gitlab.com/CentOS/automotive/sample-images/-/raw/main/auto-image-builder.sh?ref_type=heads"
         cd sample-images
-        sudo bash auto-image-builder.sh build --distro autosd9 --mode image --target s32g_vnp_rdb3 --export qcow2 simple-minimal.aib.yml hosted-test-minimal-image.qcow2
+        sudo bash auto-image-builder.sh build --distro autosd9 --mode image --target s32g_vnp_rdb3 --export qcow2 images/simple-developer.aib.yml hosted-test-minimal-image.qcow2
 
 
     - name: Upload Artifact
